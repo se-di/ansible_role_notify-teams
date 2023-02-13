@@ -1,1 +1,51 @@
+name: Deploy
 
+on:
+  push:
+    branches: ["main", "master", "develop"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy my app
+
+    # IMPORTANT: the workflow must have write access to deployments, otherwise the action will fail.
+    permissions:
+      deployments: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Deploy my app
+        run: |
+          ansible-playbook playbook.yml \
+            -i "inventory/inventory" \
+            --extra-vars='title="Deploy notification" \
+              message="Start deploy for this repository" \
+              details="This a sample example of notification" \
+              status="init" \
+              url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"'
+
+      - name: Update deployment status (success)
+        if: success()
+        run: |
+          ansible-playbook playbook.yml \
+            -i "inventory/inventory" \
+            --extra-vars='title="Deploy notification" \
+              message="Success deploy for this repository" \
+              details="This a sample example of notification" \
+              status="success" \
+              url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"'
+
+      - name: Update deployment status (failure)
+        if: failure()
+        run: |
+          ansible-playbook playbook.yml \
+            -i "inventory/inventory" \
+            --extra-vars='title="Deploy notification" \
+              message="Failure deploy for this repository" \
+              details="This a sample example of notification" \
+              status="failure" \
+              url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"'
