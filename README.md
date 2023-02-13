@@ -238,6 +238,6 @@ Azure Devops: `.azuredevops/pipeline.yml`
 
 ![stage](assets/azure-pipeline.png)
 
-Github Actions : `.github/workflow/pipeline.yml`
+Github Actions : `.github/workflows/pipeline.yml`
 
 ![stage](assets/github-actions.png)
