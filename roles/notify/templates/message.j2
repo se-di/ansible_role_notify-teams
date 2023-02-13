@@ -1,0 +1,71 @@
+{
+   "type": "message",
+   "attachments": [
+      {
+         "contentType": "application/vnd.microsoft.card.adaptive",
+         "contentUrl": null,
+         "content": {
+            "type": "AdaptiveCard",
+            "body": [
+               {
+                  "type": "TextBlock",
+                  "size": "medium",
+                  "weight": "bolder",
+                  "text": "{{ title }}"
+               },
+               {
+                  "type": "ColumnSet",
+                  "columns": [
+                     {
+                        "type": "Column",
+                        "items": [
+                           {
+                              "type": "Image",
+                              "style": "Person",
+                              "url": "{{ notify_image }}",
+                              "size": "Small"
+                           }
+                        ],
+                        "width": "auto"
+                     },
+                     {
+                        "type": "Column",
+                        "items": [
+                           {
+                              "type": "TextBlock",
+                              "weight": "Bolder",
+                              "text": "{{ message }}",
+                              "wrap": true,
+                              "spacing": "None",
+                           },
+                           {
+                              "type": "TextBlock",
+                              "spacing": "None",
+                              "text": "{{ date }}",
+                              "wrap": true
+                           }
+                        ],
+                        "width": "stretch"
+                     }
+                  ]
+               },
+               {
+                  "type": "TextBlock",
+                  "text": "{{ details }}",
+                  "wrap": true,
+                  "spacing": "None",
+               }
+            ],
+            "actions": [
+               {
+                  "type": "Action.OpenUrl",
+                  "title": "Visualizar pipeline",
+                  "url": "{{ url }}"
+               }
+            ],
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "version": "1.5"
+         }
+      }
+   ]
+}

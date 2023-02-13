@@ -1,0 +1,7 @@
+notify_body: "{{ lookup('template', 'roles/notify/templates/message.j2') }}"
+teams_webhook: https://lojasriachuelosa.webhook.office.com/webhookb2/4dd14b11-7643-4b56-a66e-bd4afd166e59@b8329613-0680-4673-a03f-9a18a0b0e93b/IncomingWebhook/2e64329f6ab043678aac8e439510a80f/f43f5fc7-fed4-438f-958c-66e2dd227713
+status_image:
+  init: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/computer08.svg"
+  running: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/monitor04.svg"
+  success: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/health-circle.svg"
+  failure: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/health-error.svg"
