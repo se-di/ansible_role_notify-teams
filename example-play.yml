@@ -8,7 +8,7 @@
 
     # include the handler in your playbook
     - include_role:
-        name: notify_teams
+        name: sedi.notify_teams
 
     # highly recommended is to use a block in your main playbook
     # so you can catch failures within your tasks by "rescue"
