@@ -35,7 +35,7 @@
         - set_fact:
             sdteams_title: "{{ title }}"
             sdteams_message: 'something failed in the regular play'
-            sdteams_details: "ansible_failed_result.msg"
+            sdteams_details: "{{ ansible_failed_result.msg }}"
             sdteams_status: "failure"
             sdteams_button_url: "{{ url }}"
 
