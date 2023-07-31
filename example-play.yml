@@ -1,0 +1,43 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+
+    # include the handler in your playbook
+    - include_role:
+        name: notify_teams
+
+    # highly recommended is to use a block in your main playbook
+    # so you can catch failures within your tasks by "rescue"
+    - block:
+
+        - set_fact:
+            sdteams_title: "{{ title }}"
+            sdteams_message: "All went fine"
+            sdteams_details: "Looks like my task ran just fine!"
+            sdteams_status: "success"
+            sdteams_button_url: "{{ url }}"
+
+        - shell: echo foo
+          notify: sdteams_notify
+
+        # if you want to test a failed task, enable the following but
+        # do not disable the above. You will get only 1 (failure) notification:
+        #- fail:
+        #    msg: 'this task failed.. you will get a failure due to "rescue"'
+
+      # important to also get notifies when failures occur above
+      rescue:
+
+        - set_fact:
+            sdteams_title: "{{ title }}"
+            sdteams_message: 'something failed in the regular play'
+            sdteams_details: "ansible_failed_result.msg"
+            sdteams_status: "failure"
+            sdteams_button_url: "{{ url }}"
+
+        - name: foo
+          debug: var=ansible_failed_result
+          notify: sdteams_notify

@@ -1,0 +1,12 @@
+---
+
+- name: sdteams_notify
+  uri:
+    url: "{{ sdteams_webhook }}"
+    body: "{{ sdteams_notify_body }}"
+    body_format: json
+    method: POST
+  vars:
+    sdteams_date: "{{ lookup('pipe', 'date \"' ~ sdteams_date_time_format ~ '\"') }}"
+    sdteams_notify_body: "{{ lookup('template', 'roles/notify_teams/templates/message.j2') }}"
+

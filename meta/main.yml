@@ -1,0 +1,22 @@
+galaxy_info:
+  author: Thomas Fischer
+  description: Notification handler for MS-Teams
+  company: secure-diversITy
+  license: GPL-3.0-only
+  min_ansible_version: 2.9
+
+  platforms:
+   - name: Linux
+     versions:
+     - all
+   - name: Windows
+     versions:
+     - all
+
+  galaxy_tags:
+    - notification
+    - msteams
+    - "ms-teams"
+    - "azure-teams"
+
+dependencies: []

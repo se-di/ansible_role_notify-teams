@@ -11,7 +11,7 @@
                   "type": "TextBlock",
                   "size": "medium",
                   "weight": "bolder",
-                  "text": "{{ title }}"
+                  "text": '{{ sdteams_title }}'
                },
                {
                   "type": "ColumnSet",
@@ -22,7 +22,7 @@
                            {
                               "type": "Image",
                               "style": "Person",
-                              "url": "{{ notify_image }}",
+                              "url": "{{ sdteams_notify_image }}",
                               "size": "Small"
                            }
                         ],
@@ -34,14 +34,14 @@
                            {
                               "type": "TextBlock",
                               "weight": "Bolder",
-                              "text": "{{ message }}",
+                              "text": '{{ sdteams_message }}',
                               "wrap": true,
                               "spacing": "None",
                            },
                            {
                               "type": "TextBlock",
                               "spacing": "None",
-                              "text": "{{ date }}",
+                              "text": '{{ sdteams_date }}',
                               "wrap": true
                            }
                         ],
@@ -51,7 +51,7 @@
                },
                {
                   "type": "TextBlock",
-                  "text": "{{ details }}",
+                  "text": '{{ sdteams_details }}',
                   "wrap": true,
                   "spacing": "None",
                }
@@ -59,9 +59,14 @@
             "actions": [
                {
                   "type": "Action.OpenUrl",
-                  "title": "Visualizar pipeline",
-                  "url": "{{ url }}"
-               }
+                  "title": '{{ sdteams_button_text }}',
+                  "url": "{{ sdteams_button_url }}"
+               }{% if sdteams_2nd_button_text is defined and sdteams_2nd_button_url is defined %},
+               {
+                  "type": "Action.OpenUrl",
+                  "title": '{{ sdteams_2nd_button_text }}',
+                  "url": "{{ sdteams_2nd_button_url }}"
+               }{% endif %}
             ],
             "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
             "version": "1.5"

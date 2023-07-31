@@ -1,0 +1,31 @@
+---
+
+#############################################################
+# NOTE: All defined variables here should not be touched
+# adding those to your playbook, set_fact or extra var will
+# overwrite the following - so do not do any changes here
+#############################################################
+
+# default format for date and time
+sdteams_date_time_format: '+%F %H:%M:%S'
+
+# sets the webhook URL we send notifications to
+#sdteams_webhook:
+
+# set the button text and URL showing in the message
+#sdteams_button_text:
+#sdteams_button_url:
+
+# you can specify a second button to be displayed by:
+#sdteams_2nd_button_text:
+#sdteams_2nd_button_url:
+
+# default images to be used by the sdteams_status variable:
+sdteams_status_image:
+  init: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/computer08.svg"
+  running: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/monitor04.svg"
+  success: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/health-circle.svg"
+  failure: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/health-error.svg"
+
+# use the specificed image based on sdteams_status variable:
+sdteams_notify_image: '{{ sdteams_status_image[sdteams_status | default("this key does not exist in the dict")] | default("") }}'
