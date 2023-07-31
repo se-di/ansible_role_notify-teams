@@ -40,6 +40,6 @@
             sdteams_status: "failure"
             sdteams_button_url: "{{ url }}"
 
-        - name: foo
-          debug: var=ansible_failed_result
+        - name: Failed
+          shell: "echo -e {{ ansible_failed_result.msg }}"
           notify: sdteams_notify
