@@ -15,7 +15,7 @@ Role Variables
 
 - `sdteams_date_time_format`: The date + time format used in the Teams message header
 - `sdteams_webhook`: the full hook URI you got from MS-Teams configuration
-- `sdteams_status`: one of `[ init, running, success, failure ]` - will also set an image accordingly (see next topic)
+- `sdteams_status`: one of `[ init, running, success, failure ]` - will also set an image accordingly (see `sdteams_status_image`)
 - `sdteams_button_text`: set the button text
 - `sdteams_button_url`: sets the URL the button will use
 
