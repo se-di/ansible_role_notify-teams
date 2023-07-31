@@ -34,7 +34,7 @@ Dependencies
 Example Playbook
 ----------------
 
-see: [example-play.yml](example-play.yml)
+see: [example-play.yml](https://github.com/secure-diversITy/ansible_role_notify-teams/blob/master/example-play.yml)
 
 License
 -------
