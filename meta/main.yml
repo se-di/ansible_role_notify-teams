@@ -4,7 +4,6 @@ galaxy_info:
   company: secure-diversITy
   license: GPL-3.0-only
   min_ansible_version: 2.9
-
   platforms:
    - name: GenericLinux
      versions:
@@ -12,11 +11,9 @@ galaxy_info:
    - name: Windows
      versions:
      - all
-
   galaxy_tags:
     - notification
     - msteams
     - "ms-teams"
     - "azure-teams"
-
 dependencies: []
