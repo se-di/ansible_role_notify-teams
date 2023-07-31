@@ -13,6 +13,9 @@ Role Variables
 
 ### Required
 
+- `sdteams_title`: the title for the notification
+- `sdteams_message`: a summary of the notification
+- `sdteams_details`: detailed output
 - `sdteams_date_time_format`: The date + time format used in the Teams message header
 - `sdteams_webhook`: the full hook URI you got from MS-Teams configuration
 - `sdteams_status`: one of `[ init, running, success, failure ]` - will also set an image accordingly (see `sdteams_status_image`)
