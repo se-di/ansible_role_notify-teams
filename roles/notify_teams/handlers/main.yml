@@ -9,4 +9,3 @@
   vars:
     sdteams_date: "{{ lookup('pipe', 'date \"' ~ sdteams_date_time_format ~ '\"') }}"
     sdteams_notify_body: "{{ lookup('template', 'roles/notify_teams/templates/message.j2') }}"
-

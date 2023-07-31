@@ -1,5 +1,4 @@
 ---
-
 #############################################################
 # NOTE: All defined variables here should not be touched
 # adding those to your playbook, set_fact or extra var will
