@@ -28,6 +28,7 @@ Role Variables
 - `sdteams_2nd_button_text`: specify the button text for a second button
 - `sdteams_2nd_button_url`: specify the URL for that second button
 - `sdteams_status_image`: a list of `<status>: "<url>"` values used to be displayed when specifying `sdteams_status`
+- `sdteams_skip_notify`: if set to `true` this enables a global overwrite for skipping any notification (e.g. when you're debugging your ansible tasks)
 
 Dependencies
 ------------
