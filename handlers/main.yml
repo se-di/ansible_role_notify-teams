@@ -9,3 +9,4 @@
   vars:
     sdteams_date: "{{ lookup('pipe', 'date \"' ~ sdteams_date_time_format ~ '\"') }}"
     sdteams_notify_body: "{{ lookup('template', role_path ~ '/templates/message.j2') }}"
+  when: sdteams_skip_notify is undefined
