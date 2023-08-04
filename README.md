@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Enables a notification handler to send messages to MS-Teams by a webhook
+Send messages to MS-Teams by a webhook, either by an Ansible handler or immediately by a task.
 
 Requirements
 ------------
@@ -21,7 +21,6 @@ Role Variables
 - `sdteams_status`: one of `[ init, running, success, failure ]` - will also set an image accordingly (see `sdteams_status_image`)
 - `sdteams_button_text`: set the button text
 - `sdteams_button_url`: sets the URL the button will use
-
 
 ### Optional
 
@@ -48,5 +47,5 @@ GPL-3.0-only
 Author Information
 ------------------
 
-Based on the great work of [@lucasdk3](https://github.com/lucasdk3/ansible-notify-teams), adapted and enhanced to allow using it as a notification handler instead of a classical task.
+Based on the great work of [@lucasdk3](https://github.com/lucasdk3/ansible-notify-teams), adapted and enhanced to allow using it also as a notification handler instead of just a classical task.
 
