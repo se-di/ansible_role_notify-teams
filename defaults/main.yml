@@ -28,3 +28,6 @@ sdteams_status_image:
 
 # use the specificed image based on sdteams_status variable:
 sdteams_notify_image: '{{ sdteams_status_image[sdteams_status | default("this key does not exist in the dict")] | default("") }}'
+
+# ensure we know our installation path (even when included by other roles)
+sdteams_role_path: "{{ role_path }}"
