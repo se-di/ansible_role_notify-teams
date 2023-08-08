@@ -88,6 +88,7 @@ Based on the great work of [@lucasdk3](https://github.com/lucasdk3/ansible-notif
 
 Adapted and enhanced by me:
 
+- make it ansible galaxy compatible
 - added notification handler
 - added an optional second button if specified
 - bugfixes
