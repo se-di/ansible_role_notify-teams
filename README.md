@@ -76,13 +76,20 @@ Using it as an immediate notification
 Example Playbook
 ----------------
 
-see: [example-play.yml](https://github.com/secure-diversITy/ansible_role_notify-teams/blob/master/example-play.yml)
+For a complete example, including advanced methods like using `rescue` to trigger failures, see: [example-play.yml](https://github.com/secure-diversITy/ansible_role_notify-teams/blob/master/example-play.yml)
 
 # License
 
 GPL-3.0-only
 
-# Author Information
+# Author / Fork Information
 
-Based on the great work of [@lucasdk3](https://github.com/lucasdk3/ansible-notify-teams), adapted and enhanced to allow using it also as a notification handler instead of just a classical task.
+Based on the great work of [@lucasdk3](https://github.com/lucasdk3/ansible-notify-teams).
+
+Adapted and enhanced by me:
+
+- added notification handler
+- added an optional second button if specified
+- bugfixes
+
 
