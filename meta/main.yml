@@ -15,8 +15,10 @@ galaxy_info:
         - all
   galaxy_tags:
     - azureteams
+    - azure-teams
     - microsoft
     - msteams
+    - ms-teams
     - teams
     - notification
     - webhook
