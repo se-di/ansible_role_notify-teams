@@ -21,9 +21,9 @@
                         "items": [
                            {
                               "type": "Image",
-                              "style": "Person",
                               "url": "{{ sdteams_notify_image }}",
-                              "size": "Small"
+                              "width": "{{ sdteams_status_image.width }}",
+                              "height": "{{ sdteams_status_image.height }}"
                            }
                         ],
                         "width": "auto"
@@ -69,7 +69,7 @@
                }{% endif %}
             ],
             "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-            "version": "1.5"
+            "version": "1.6"
          }
       }
    ]
