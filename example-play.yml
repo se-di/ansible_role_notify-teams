@@ -1,6 +1,7 @@
 ---
 
-- hosts: localhost
+- name: "Example playbook"
+  hosts: localhost
   connection: local
   gather_facts: false
 
@@ -23,7 +24,8 @@
             sdteams_button_url: "{{ url }}"
 
         # this will trigger the notification handler at the (very) end
-        - shell: echo foo
+        - name: "trigger teams msg"
+          shell: echo foo
           notify: sdteams_notify
 
         # handlers will only notify once at the very end but you might want to 

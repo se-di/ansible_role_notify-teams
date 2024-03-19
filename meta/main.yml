@@ -1,20 +1,23 @@
 galaxy_info:
   author: Thomas Fischer
   role_name: notify_teams
+  namespace: sedi
   description: Notification handler for MS-Teams
   company: secure-diversITy
   license: GPL-3.0-only
-  min_ansible_version: 2.9
+  min_ansible_version: "2.9"
   platforms:
-   - name: GenericLinux
-     versions:
-     - all
-   - name: Windows
-     versions:
-     - all
+    - name: GenericLinux
+      versions:
+        - all
+    - name: Windows
+      versions:
+        - all
   galaxy_tags:
-    - notification
+    - azureteams
+    - microsoft
     - msteams
-    - "ms-teams"
-    - "azure-teams"
+    - teams
+    - notification
+    - webhook
 dependencies: []
