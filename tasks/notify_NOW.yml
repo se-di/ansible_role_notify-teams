@@ -2,26 +2,28 @@
 
 - block:
 
-    - set_fact:
+    - name: "Grab last task error"
+      ansible.builtin.set_fact:
         sdteams_message: "{{ teams_error_message }}"
         sdteams_details: |
             Error occured in task:
-                
-                {{ ansible_failed_task.name | replace('"','') |replace("'","") | regex_replace('[}{]','') }}
             
+                {{ ansible_failed_task.name | replace('"', '') | replace("'", "") | regex_replace('[}{]', '') }}
+              
             Error message was:
+             
+                {{ ansible_failed_result.msg | replace('"', '') | replace("'", "") | regex_replace('[}{]', '') }}
 
-            {{ ansible_failed_result.msg | replace('"','') |replace("'","") | regex_replace('[}{]','') }}
-
-    - include_tasks: "{{ sdteams_role_path }}/handlers/main.yml"
+    - ansible.builtin.include_tasks: "{{ sdteams_role_path }}/handlers/main.yml"
   
-    - fail:
+    - name: "Last catched Ansible error"
+      ansible.builtin.fail:
         msg: "{{ sdteams_details }}"
 
   when: sdteams_status == "failure"
 
 - block:
 
-    - include_tasks: "{{ sdteams_role_path }}/handlers/main.yml"
+    - ansible.builtin.include_tasks: "{{ sdteams_role_path }}/handlers/main.yml"
 
   when: sdteams_status == "success"
