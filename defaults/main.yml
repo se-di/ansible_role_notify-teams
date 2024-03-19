@@ -20,10 +20,12 @@ sdteams_date_time_format: '+%F %H:%M:%S'
 #sdteams_2nd_button_url:
 
 # default images to be used by the sdteams_status variable.
-# the data:image encoded vars are converted by http://base64online.org/encode
-# and avoid calling home to MS
+# the data:image encoded vars are converted to 128px PNG's and encoded by http://base64online.org/encode
+# using data:image is recommended to avoid calling home to MS.
+# note: SVG images might not work due to a bug in Teams, so better choose PNG
 sdteams_status_image:
-  image_size: 48px
+  height: 38px
+  width: 38px
   # init: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/computer08.svg"
   # running: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/monitor04.svg"
   # success: "https://azure.microsoft.com/en-us/patterns/styles/glyphs-icons/health-circle.svg"
